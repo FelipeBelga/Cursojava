@@ -1,63 +1,49 @@
 package cursojava;
 
+import java.util.Objects;
+
 public class Disciplina {
-	
-	 private double nota1;
-	 private double nota2;
-	 private double nota3;
-	 private double nota4;
-	
-	 public double getNota1() {
-		return nota1;
+
+	private double nota;
+	private String disciplina;
+
+	@Override
+	public String toString() {
+		return "Disciplina [nota=" + nota + ", disciplina=" + disciplina + "]";
 	}
-	public void setNota1(double nota1) {
-		this.nota1 = nota1;
+
+	public double getNota() {
+		return nota;
 	}
-	public double getNota2() {
-		return nota2;
+
+	public void setNota(double nota) {
+		this.nota = nota;
 	}
-	public void setNota2(double nota2) {
-		this.nota2 = nota2;
+
+	public String getDisciplina() {
+		return disciplina;
 	}
-	public double getNota3() {
-		return nota3;
+
+	public void setDisciplina(String disciplina) {
+		this.disciplina = disciplina;
 	}
-	public void setNota3(double nota3) {
-		this.nota3 = nota3;
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(disciplina, nota);
 	}
-	public double getNota4() {
-		return nota4;
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Disciplina other = (Disciplina) obj;
+		return Objects.equals(disciplina, other.disciplina)
+				&& Double.doubleToLongBits(nota) == Double.doubleToLongBits(other.nota);
 	}
-	public void setNota4(double nota4) {
-		this.nota4 = nota4;
-	}
-	public String getDisciplina1() {
-		return Disciplina1;
-	}
-	public void setDisciplina1(String disciplina1) {
-		Disciplina1 = disciplina1;
-	}
-	public String getDisciplina2() {
-		return Disciplina2;
-	}
-	public void setDisciplina2(String disciplina2) {
-		Disciplina2 = disciplina2;
-	}
-	public String getDisciplina3() {
-		return Disciplina3;
-	}
-	public void setDisciplina3(String disciplina3) {
-		Disciplina3 = disciplina3;
-	}
-	public String getDisciplina4() {
-		return Disciplina4;
-	}
-	public void setDisciplina4(String disciplina4) {
-		Disciplina4 = disciplina4;
-	}
-	private String Disciplina1;
-	 private String Disciplina2;
-	 private String Disciplina3;
-	 private String Disciplina4;
 
 }

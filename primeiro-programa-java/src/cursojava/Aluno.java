@@ -1,6 +1,9 @@
 package cursojava;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+
 
 public class Aluno {
 	
@@ -15,21 +18,19 @@ public class Aluno {
 	public String nomeEscola;
 	public String serieMatriculado;
 	
-   private Disciplina disciplina = new Disciplina();
+    private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
    
-   public void setDisciplina(Disciplina disciplina) {
-	this.disciplina = disciplina;
-   }
-   
-   public Disciplina getDisciplina() {
-	return disciplina;
-   }
 	
+	public List<Disciplina> getDisciplinas() {
+		return disciplinas;
+	}
+
+	public void setDisciplinas(List<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
+	}
+
 	public double getMediaNota() {
-	   return (disciplina.getNota1() +  
-			   disciplina.getNota2() + 
-			   disciplina.getNota3() +
-			   disciplina.getNota4()) /4;
+	   return 0;
    }
    
    public boolean getAlunoAprovado() {

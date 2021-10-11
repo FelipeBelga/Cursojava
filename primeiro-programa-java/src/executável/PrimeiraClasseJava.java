@@ -23,15 +23,15 @@ public class PrimeiraClasseJava {
 		aluno1.setNumeroCpf(JOptionPane.showInputDialog("Digite o CPF do Aluno"));
 		aluno1.setSerieMatriculado(JOptionPane.showInputDialog("Digite a Série do Aluno"));
 		
-		aluno1.getDisciplina().setDisciplina1(JOptionPane.showInputDialog("Digite a Disciplina 1"));
-		aluno1.getDisciplina().setNota1(Integer.parseInt(JOptionPane.showInputDialog("Digite a NOTA 1 do Aluno")));
-		aluno1.getDisciplina().setDisciplina2(JOptionPane.showInputDialog("Digite a Disciplina 2"));
-		aluno1.getDisciplina().setNota2(Integer.parseInt(JOptionPane.showInputDialog("Digite a NOTA 2 do Aluno")));
-		aluno1.getDisciplina().setDisciplina3(JOptionPane.showInputDialog("Digite a Disciplina 3"));
-		aluno1.getDisciplina().setNota3(Integer.parseInt(JOptionPane.showInputDialog("Digite a NOTA 3 do Aluno")));
-		aluno1.getDisciplina().setDisciplina4(JOptionPane.showInputDialog("Digite a Disciplina 4"));
-		aluno1.getDisciplina().setNota4(Integer.parseInt(JOptionPane.showInputDialog("Digite a NOTA 4 do Aluno")));
-		
+//		aluno1.getDisciplina().setDisciplina1(JOptionPane.showInputDialog("Digite a Disciplina 1"));
+//		aluno1.getDisciplina().setNota1(Double.parseDouble(JOptionPane.showInputDialog("Digite a NOTA 1 do Aluno")));
+//		aluno1.getDisciplina().setDisciplina2(JOptionPane.showInputDialog("Digite a Disciplina 2"));
+//		aluno1.getDisciplina().setNota2(Double.parseDouble(JOptionPane.showInputDialog("Digite a NOTA 2 do Aluno")));
+//		aluno1.getDisciplina().setDisciplina3(JOptionPane.showInputDialog("Digite a Disciplina 3"));
+//		aluno1.getDisciplina().setNota3(Double.parseDouble(JOptionPane.showInputDialog("Digite a NOTA 3 do Aluno")));
+//		aluno1.getDisciplina().setDisciplina4(JOptionPane.showInputDialog("Digite a Disciplina 4"));
+//		aluno1.getDisciplina().setNota4(Double.parseDouble(JOptionPane.showInputDialog("Digite a NOTA 4 do Aluno")));
+//		
 		
 		System.out.println("O Nome do aluno é: " + aluno1.nome);
 		System.out.println("O Nome da Mãe é: " + aluno1.nomeMae);
@@ -43,10 +43,10 @@ public class PrimeiraClasseJava {
 		System.out.println("O Nome da Escola: " + aluno1.nomeEscola);
 		System.out.println("Data da Matrícula: " + aluno1.dataMatricula);
 		System.out.println("Serié do Aluno: " + aluno1.serieMatriculado);
-		System.out.println("DISCIPLINA 1: " + aluno1.getDisciplina().getDisciplina1() + aluno1.getDisciplina().getNota1());
-		System.out.println("DISCIPLINA 2: " + aluno1.getDisciplina().getDisciplina1() + aluno1.getDisciplina().getNota2());
-		System.out.println("DISCIPLINA 3: " + aluno1.getDisciplina().getDisciplina1() + aluno1.getDisciplina().getNota3());
-		System.out.println("DISCIPLINA 4: " + aluno1.getDisciplina().getDisciplina1() + aluno1.getDisciplina().getNota4());
+//		System.out.println("DISCIPLINA 1: " + aluno1.getDisciplina().getDisciplina1() + aluno1.getDisciplina().getNota1());
+//		System.out.println("DISCIPLINA 2: " + aluno1.getDisciplina().getDisciplina1() + aluno1.getDisciplina().getNota2());
+//		System.out.println("DISCIPLINA 3: " + aluno1.getDisciplina().getDisciplina1() + aluno1.getDisciplina().getNota3());
+//		System.out.println("DISCIPLINA 4: " + aluno1.getDisciplina().getDisciplina1() + aluno1.getDisciplina().getNota4());
 		System.out.println("A MÉDIA do Aluno é: " + aluno1.getMediaNota());
 		
 		Aluno aluno2 = new Aluno(null);
