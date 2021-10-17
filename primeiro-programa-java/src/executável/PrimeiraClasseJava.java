@@ -15,12 +15,13 @@ public class PrimeiraClasseJava {
 		// TODO Auto-generated method stub
 
 		List<Aluno> alunos = new ArrayList<Aluno>();
+		int numeroAlunos = Integer.parseInt(JOptionPane.showInputDialog("Digita o nuémero de alunos"));
 		
-		for (int qtd = 1; qtd <=2; qtd++) {
+		for (int qtd = 1; qtd <=numeroAlunos; qtd++) {
 		
 		Aluno aluno1 = new Aluno(null);
 
-		aluno1.setNome(JOptionPane.showInputDialog("Digite o nome do Aluno"));
+		aluno1.setNome(JOptionPane.showInputDialog("Digite o nome do Aluno " + qtd));
 //		aluno1.setIdade(Integer.parseInt(JOptionPane.showInputDialog("Digite a Idade do Aluno")));
 //		aluno1.setNomeMae(JOptionPane.showInputDialog("Digite o nome da Mãe"));
 //		aluno1.setNomePai(JOptionPane.showInputDialog("Digite o nome do Pai"));
@@ -44,26 +45,23 @@ public class PrimeiraClasseJava {
 			disciplina.setNota(Double.valueOf(notaDiscplina));
 			aluno1.getDisciplinas().add(disciplina);
 			
-			System.out.println("Disciplina: " + disciplina.getDisciplina() + "Nota: " +
-			disciplina.getNota());
+			
+//		int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina?");
+//		
+//		if (escolha == 0) {/*Opção 0- SIM ou 1- NÃO */
+//			int continuarRemover = 0;
+//			int posicao = 1;
+//			while (continuarRemover == 0) {
+//				String disciplinaRemover = JOptionPane.showInputDialog("Qual a disciplina deseja remover?");
+//				aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() - posicao);
+//				posicao++;
+//				continuarRemover = JOptionPane.showConfirmDialog(null, "Continuar a Remover");
+//				if (posicao == 0) {
+//					continuarRemover = 1;
+//				}
+//				
+//			}
 		}
-
-		int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina?");
-		
-		if (escolha == 0) {/*Opção 0- SIM ou 1- NÃO */
-			int continuarRemover = 0;
-			int posicao = 1;
-			while (continuarRemover == 0) {
-				String disciplinaRemover = JOptionPane.showInputDialog("Qual a disciplina deseja remover?");
-				aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() - posicao);
-				posicao++;
-				continuarRemover = JOptionPane.showConfirmDialog(null, "Continuar a Remover");
-				if (posicao == 0) {
-					continuarRemover = 1;
-				}
-				
-			}
-			}
 			
 //		}
 //		if (escolha == 0) {
@@ -109,9 +107,42 @@ public class PrimeiraClasseJava {
 		
 		}
 		
-		for (Aluno aluno : alunos) {
+//		/*Pecorre uma lista procurando por sua posição*/
+        for (int pos = 0; pos < alunos.size(); pos++) {
+        	Aluno aluno = alunos.get(pos);
+        	
+        	System.out.println("aluno: " + aluno.getNome());
+        	
+        	for (Disciplina disciplina : aluno.getDisciplinas()) {
+        		System.out.println("Disciplina: " + disciplina.getDisciplina());
+				System.out.println("Nota: " + disciplina.getNota());
+				
+        	}
+        	
+        	System.out.println("A  média do Aluno é: " + aluno.getMediaNota());
+        	System.out.println("Resultado: " + aluno.getAlunoAprovado2());
+        	System.out.println("------------------------------------------------------------------------------ ");
+
+        }
+        
+        
+        
+//        for (Aluno aluno : alunos) {
+//			
+//			String procuraNome = JOptionPane.showInputDialog("Digite o nome a ser pesquisado");
+//			
+//			if (aluno.getNome().equalsIgnoreCase(procuraNome)){
+//		        alunos.remove(aluno);
+//		        break;
+//			}else {
 			
-			System.out.println("O Nome do aluno é: " + aluno.nome);
+           
+//			System.out.println("O Nome do aluno é: " + aluno1.getNome());
+////			System.out.println("A MÉDIA do Aluno é: " + aluno.getMediaNota());
+//			System.out.println("Resultado está: " + (aluno1.getAlunoAprovado() ? "Aprovado" : "Reprovado" ));
+//		    System.out.println("Resultado está: " + aluno1.getAlunoAprovado2());
+//			System.out.println("---------------------------------------------------------------------------- ");
+//			
 //			System.out.println("O Nome da Mãe é: " + aluno1.nomeMae);
 //			System.out.println("O Nome da Pai é: " + aluno1.nomePai);
 //			System.out.println("IDADE: " + aluno1.idade);
@@ -135,12 +166,28 @@ public class PrimeiraClasseJava {
 //			System.out.println("DISCIPLINA 4: " + aluno1.getDisciplina().getDisciplina1() + aluno1.getDisciplina().getNota4());
 
 			
-			System.out.println("A MÉDIA do Aluno é: " + aluno.getMediaNota());
-			//System.out.println("Resultado está: " + (aluno1.getAlunoAprovado() ? "Aprovado" : "Reprovado" ));
-			System.out.println("Resultado está: " + aluno.getAlunoAprovado2());
-			System.out.println("---------------------------------------------------------------------------- ");
-		}
+			//		if (aluno1.getAlunoAprovado() == true) {
+//				System.out.println("Aluno APROVADO");
+//			} else {
+//				System.out.println("Aluno REPROVADO");
+//			}
+			
+			
+		//	}
+	//	}
 		
-	}
-
+//		for (Aluno aluno : alunos) {
+//			System.out.println("Alunos que sobraram na lista");
+//			System.out.println(aluno.getNome());
+//			System.out.println("Suas materias são");
+//			
+//			for (Disciplina disciplina : aluno.getDisciplinas() ) {
+//				System.out.println("Matéria: " + disciplina.getDisciplina());
+//				System.out.println("Nota: " + disciplina.getNota());
+//			}
+//			
+		}
+//		
 }
+
+

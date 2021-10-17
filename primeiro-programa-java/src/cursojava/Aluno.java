@@ -6,19 +6,22 @@ import java.util.List;
 import java.util.Objects;
 
 public class Aluno {
+	private String nome;
+	private int idade;
+	private String dataNascimento;
+	private String registroGeral;
+	private String numeroCpf;
+	private String nomeMae;
+	private String nomePai;
+	private String dataMatricula;
+	private String serieMatriculado;
 
-	public String nome;
-	public int idade;
-	public String dataNascimento;
-	public String registroGeral;
-	public String numeroCpf;
-	public String nomeMae;
-	public String nomePai;
-	public String dataMatricula;
-	public String nomeEscola;
-	public String serieMatriculado;
+	public Aluno() {/* Cria os dados na memória de forma padrão do java */
+
+	}
 
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
+	
 
 	public List<Disciplina> getDisciplinas() {
 		return disciplinas;
@@ -26,64 +29,6 @@ public class Aluno {
 
 	public void setDisciplinas(List<Disciplina> disciplinas) {
 		this.disciplinas = disciplinas;
-	}
-
-	public double getMediaNota() {
-
-		double somaNotas = 0.0;
-
-		for (Disciplina disciplina : disciplinas) {
-
-			somaNotas += disciplina.getNota();
-
-		}
-		return somaNotas / disciplinas.size();
-	}
-
-	public boolean getAlunoAprovado() {
-	   double media = this.getMediaNota();
-	   if (media >= 70) {/*Aprovado*/
-		   
-		   return true;
-		   
-	   }else {
-		   return false;/*Reprovado*/
-	   }
-	}
-	public String getAlunoAprovado2() {
-		double media = this.getMediaNota();
-		if (media >= 50) {
-			if (media >= 70) {/*Aprovado*/
-			   return "APROVADO"; 
-			}else {/*Recuperação*/
-			   return "RECUPERAÇÃO";
-			}
-		} else {/*Aprovado*/
-			return "REPROVADO";
-		}
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(dataMatricula, dataNascimento, idade, nome, nomeEscola, nomeMae, nomePai, numeroCpf,
-				registroGeral, serieMatriculado);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Aluno other = (Aluno) obj;
-		return Objects.equals(dataMatricula, other.dataMatricula)
-				&& Objects.equals(dataNascimento, other.dataNascimento) && idade == other.idade
-				&& Objects.equals(nome, other.nome) && Objects.equals(nomeEscola, other.nomeEscola)
-				&& Objects.equals(nomeMae, other.nomeMae) && Objects.equals(nomePai, other.nomePai)
-				&& Objects.equals(numeroCpf, other.numeroCpf) && Objects.equals(registroGeral, other.registroGeral)
-				&& Objects.equals(serieMatriculado, other.serieMatriculado);
 	}
 
 	public Aluno(String nomePadrao) {
@@ -159,14 +104,6 @@ public class Aluno {
 		this.dataMatricula = dataMatricula;
 	}
 
-	public String getNomeEscola() {
-		return nomeEscola;
-	}
-
-	public void setNomeEscola(String nomeEscola) {
-		this.nomeEscola = nomeEscola;
-	}
-
 	public String getSerieMatriculado() {
 		return serieMatriculado;
 	}
@@ -175,12 +112,83 @@ public class Aluno {
 		this.serieMatriculado = serieMatriculado;
 	}
 
-	@Override
-	public String toString() {
-		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
-				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
-				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
-				+ serieMatriculado + "]";
+	public double getMediaNota() {
+		double somaNotas = 0.0;
+		for (Disciplina disciplina : disciplinas) {
+			
+			somaNotas += disciplina.getNota();
+		}
+
+		return somaNotas / disciplinas.size();
+       
 	}
+
+	public boolean getAlunoAprovado() {
+		double media = this.getMediaNota();
+		if (media >= 70) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public String getAlunoAprovado2() {
+		double media = this.getMediaNota();
+
+		if (media >= 50) {
+			if (media >= 70) {
+				return "APROVADO";
+			} else {
+				return "RECUPERAÇÃO";
+			}
+		} else {
+			return "REPROVADO";
+		}
+	}
+	/*
+	 * Veremos os metodos SETTERS e GETTERS do objeto SET é para adicionar ou
+	 * receber os dados para os atributos GET é para resgatar ou obter o valor do
+	 * atributo
+	 */
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + ((numeroCpf == null) ? 0 : numeroCpf.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Aluno other = (Aluno) obj;
+		if (nome == null) {
+			if (other.nome != null)
+				return false;
+		} else if (!nome.equals(other.nome))
+			return false;
+		if (numeroCpf == null) {
+			if (other.numeroCpf != null)
+				return false;
+		} else if (!numeroCpf.equals(other.numeroCpf))
+			return false;
+		return true;
+	}
+
+	/* Recebe dados */
+//	public void setNome(String nome) {
+//		this.nome = nome ;
+//	}
+//	
+//	public String getNome() {
+//		return nome;
+//	}
 
 }
